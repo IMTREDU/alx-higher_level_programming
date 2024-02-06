@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Module to define the Student class with methods for serialization and deserialization
+Module to define the Student class
 """
+
 
 
 class Student:
