@@ -3,20 +3,16 @@
 Module to generate Pascal's triangle
 """
 
+
 def pascal_triangle(n):
-    """
-    Generate Pascal's triangle of n
+    """Represent Pascal's Triangle of size n.
 
-    Args:
-        n (int)
-
-    Returns:
-        list
+    Returns a list of lists of integers representing the triangle.
     """
     if n <= 0:
         return []
 
-    triangle = [[1]]
+    triangles = [[1]]
     while len(triangles) != n:
         tri = triangles[-1]
         tmp = [1]
