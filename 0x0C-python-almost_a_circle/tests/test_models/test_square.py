@@ -19,7 +19,7 @@ class TestSquare(unittest.TestCase):
         """Cleans up after each test_method."""
         pass
 
-    # ----------------- Tests for #2 ------------------------
+    #2
 
     def test_A_class(self):
         """Tests Square class type."""
@@ -126,7 +126,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(r.x, 102)
         self.assertEqual(r.y, 103)
 
-    # ----------------- Tests for #3 ------------------------
+    #3
 
     def invalid_types(self):
         """Returns tuple of types for validation."""
@@ -181,7 +181,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(r.x, 0)
         self.assertEqual(r.y, 0)
 
-    # ----------------- Tests for #4 ------------------------
+    #4
+
     def test_I_area_no_args(self):
         """Tests area() method signature."""
         r = Square(5)
@@ -220,7 +221,7 @@ class TestSquare(unittest.TestCase):
             s1.size = 0
         self.assertEqual(str(e.exception), "width must be > 0")
 
-    # ----------------- Tests for #5 & #7 ------------------------
+    #5 and 7
     def test_J_display_no_args(self):
         """Tests display() method signature."""
         r = Square(9)
@@ -401,7 +402,7 @@ class TestSquare(unittest.TestCase):
 """
         self.assertEqual(f.getvalue(), s)
 
-        # ----------------- Tests for #6 ------------------------
+        #6
 
     def test_K_str_no_args(self):
         """Tests __str__() method signature."""
@@ -426,7 +427,7 @@ class TestSquare(unittest.TestCase):
         s = '[Square] (40) 20/30 - 10'
         self.assertEqual(str(r), s)
 
-        # ----------------- Tests for #8 & #9 ------------------------
+        #8 and 9
     def test_L_update_no_args(self):
         """Tests update() method signature."""
         r = Square(5, 2)
@@ -557,7 +558,7 @@ class TestSquare(unittest.TestCase):
         s1.update(size=7, id=89, y=1)
         self.assertEqual(str(s1), "[Square] (89) 12/1 - 7")
 
-    # ----------------- Tests for #14 ------------------------
+    #14
     def test_M_to_dictionary(self):
         """Tests to_dictionary() signature:"""
         with self.assertRaises(TypeError) as e:

@@ -19,7 +19,7 @@ class TestRectangle(unittest.TestCase):
         """Cleans up after each test_method."""
         pass
 
-    # ----------------- Tests for #2 ------------------------
+    #2
 
     def test_A_class(self):
         """Tests Rectangle class type."""
@@ -150,7 +150,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 102)
         self.assertEqual(r.y, 103)
 
-    # ----------------- Tests for #3 ------------------------
+    #3
 
     def invalid_types(self):
         """Returns tuple of types for validation."""
@@ -205,7 +205,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 0)
         self.assertEqual(r.y, 0)
 
-    # ----------------- Tests for #4 ------------------------
+    #4
+
     def test_I_area_no_args(self):
         """Tests area() method signature."""
         r = Rectangle(5, 6)
@@ -241,7 +242,7 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
 
-    # ----------------- Tests for #5 & #7 ------------------------
+    #5 and 7
     def test_J_display_no_args(self):
         """Tests display() method signature."""
         r = Rectangle(9, 8)
@@ -364,7 +365,7 @@ class TestRectangle(unittest.TestCase):
 """
         self.assertEqual(f.getvalue(), s)
 
-        # ----------------- Tests for #6 ------------------------
+        #6
 
     def test_K_str_no_args(self):
         """Tests __str__() method signature."""
@@ -393,7 +394,7 @@ class TestRectangle(unittest.TestCase):
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(str(r2), "[Rectangle] (1) 1/0 - 5/5")
 
-        # ----------------- Tests for #8 & #9 ------------------------
+        #8 and 9
     def test_L_update_no_args(self):
         """Tests update() method signature."""
         r = Rectangle(5, 2)
@@ -548,7 +549,7 @@ class TestRectangle(unittest.TestCase):
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
-    # ----------------- Tests for #13 ------------------------
+    #13
     def test_M_to_dictionary(self):
         """Tests to_dictionary() signature:"""
         with self.assertRaises(TypeError) as e:

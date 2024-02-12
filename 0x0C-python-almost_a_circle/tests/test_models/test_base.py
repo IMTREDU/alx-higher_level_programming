@@ -84,7 +84,7 @@ class TestBase(unittest.TestCase):
         b = Base(id=i)
         self.assertEqual(b.id, i)
 
-    # ----------------- Tests for #15 ------------------------
+    #15
     def test_H_to_json_string(self):
         """Tests to_json_string() signature:"""
         with self.assertRaises(TypeError) as e:
@@ -143,7 +143,7 @@ class TestBase(unittest.TestCase):
         dictionary = dictionary.replace("'", '"')
         self.assertEqual(dictionary, json_dictionary)
 
-    # ----------------- Tests for #17 ------------------------
+    #17
     def test_H_test_from_json_string(self):
         """Tests to_json_string() signature:"""
         with self.assertRaises(TypeError) as e:
@@ -188,7 +188,7 @@ class TestBase(unittest.TestCase):
         list_out = Rectangle.from_json_string(Rectangle.to_json_string(list_in))
         self.assertEqual(list_in, list_out)
 
-        # ----------------- Tests for #16 ------------------------
+        #16
     def test_I_save_to_file(self):
         """Tests save_to_file() method."""
         import os
@@ -233,7 +233,7 @@ class TestBase(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertEqual(len(file.read()), 38)
 
-        # ----------------- Tests for #18 ------------------------
+        #18
     def test_J_create(self):
         """Tests create() method."""
         r1 = Rectangle(3, 5, 1)
@@ -243,7 +243,7 @@ class TestBase(unittest.TestCase):
         self.assertFalse(r1 is r2)
         self.assertFalse(r1 == r2)
 
-        # ----------------- Tests for #19 ------------------------
+        #19
     def test_K_load_from_file(self):
         """Tests load_from_file() method."""
         r1 = Rectangle(10, 7, 2, 8)
