@@ -1,16 +1,27 @@
 #!/usr/bin/python3
+"""
+Module: model_state
+Defines the State class and initializes the database.
+"""
 
-"""Module that defines the State class"""
-from sqlalchemy import Column, Integer, String , MetaData
+import sys
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+Base = declarative_base()
 
 class State(Base):
     """
-    Class representing a state.
+    State class.
+    Represents a state with id and name.
     """
+
     __tablename__ = 'states'
-    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+
+if __name__ == "__main__":
+    from sqlalchemy import create_engine
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
