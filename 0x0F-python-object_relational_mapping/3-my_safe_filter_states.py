@@ -1,19 +1,23 @@
 #!/usr/bin/python3
 """
-This script connects to a MySQL server and safely retrieves rows from the states.
+Script to display all values in the states table of hbtn_0e_0_usa where
+name matches the argument, safely from MySQL injections.
 """
 
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
-    c = db.cursor()
-    state_name = sys.argv[4]
-    c.execute("SELECT * FROM states WHERE name LIKE %s", (state_name,))
-    rows = c.fetchall()
-    for row in rows:
+    db = MySQLdb.connect(host="localhost",
+                         user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         port=3306,
+                         charset="utf8")
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC",
+                (sys.argv[4],))
+    for row in cur.fetchall():
         print(row)
-    c.close()
+    cur.close()
     db.close()
