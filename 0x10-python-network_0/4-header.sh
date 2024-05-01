@@ -1,4 +1,3 @@
 #!/bin/bash
-# This script takes a URL as an argument, sends a GET request to the URL with a custom header X-School-User-Id: 98
-
-curl -sX GET $1 -H "X-HolbertonSchool-User-Id: 98" -L
+# Sends a GET request with a custom header to a URL
+curl -s -X GET -H "X-School-User-Id: 98" "$1" -o /dev/null -w "%{http_code}"
